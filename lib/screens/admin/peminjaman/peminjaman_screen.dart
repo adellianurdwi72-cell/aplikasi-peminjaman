@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pinjamdapur/screens/admin/widgets/admin_drawer.dart';
 import 'package:pinjamdapur/screens/admin/widgets/peminjaman_card.dart';
+import 'detail_peminjaman_screen.dart';
 
 class PeminjamanScreen extends StatelessWidget {
   const PeminjamanScreen({super.key});
@@ -52,44 +53,65 @@ class PeminjamanScreen extends StatelessWidget {
             /// LIST PEMINJAMAN
             Expanded(
               child: ListView(
-                children: const [
-                  PeminjamanCard(
-                    initial: 'H',
-                    initialColor: Color(0xFF90CAF9),
-                    nama: 'Hana',
-                    barang: 'Cetakan Kue',
-                    tanggal: '8-12 Januari 2026',
-                    status: 'Selesai',
+                children: [
+                  GestureDetector(
+                    onTap: () => _navigateToDetail(context),
+                    child: const PeminjamanCard(
+                      initial: 'H',
+                      initialColor: Color(0xFF90CAF9),
+                      nama: 'Hana',
+                      barang: 'Cetakan Kue',
+                      tanggal: '8-12 Januari 2026',
+                      status: 'Selesai',
+                    ),
                   ),
-                  PeminjamanCard(
-                    initial: 'F',
-                    initialColor: Color(0xFFA5D6A7),
-                    nama: 'Fani',
-                    barang: 'Timbangan Digital',
-                    tanggal: '6-10 Januari 2026',
-                    status: 'Disetujui',
+                  GestureDetector(
+                    onTap: () => _navigateToDetail(context),
+                    child: const PeminjamanCard(
+                      initial: 'F',
+                      initialColor: Color(0xFFA5D6A7),
+                      nama: 'Fani',
+                      barang: 'Timbangan Digital',
+                      tanggal: '6-10 Januari 2026',
+                      status: 'Disetujui',
+                    ),
                   ),
-                  PeminjamanCard(
-                    initial: 'B',
-                    initialColor: Color(0xFFEF9A9A),
-                    nama: 'Budi',
-                    barang: 'Oven',
-                    tanggal: '2-6 Januari 2026',
-                    status: 'Dipending',
+                  GestureDetector(
+                    onTap: () => _navigateToDetail(context),
+                    child: const PeminjamanCard(
+                      initial: 'B',
+                      initialColor: Color(0xFFEF9A9A),
+                      nama: 'Budi',
+                      barang: 'Oven',
+                      tanggal: '2-6 Januari 2026',
+                      status: 'Dipending',
+                    ),
                   ),
-                  PeminjamanCard(
-                    initial: 'C',
-                    initialColor: Color(0xFFFFCC80),
-                    nama: 'Citra',
-                    barang: 'Spatula',
-                    tanggal: '3-9 Januari 2026',
-                    status: 'Terlambat',
+                  GestureDetector(
+                    onTap: () => _navigateToDetail(context),
+                    child: const PeminjamanCard(
+                      initial: 'C',
+                      initialColor: Color(0xFFFFCC80),
+                      nama: 'Citra',
+                      barang: 'Spatula',
+                      tanggal: '3-9 Januari 2026',
+                      status: 'Terlambat',
+                    ),
                   ),
                 ],
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  void _navigateToDetail(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => const DetailPeminjamanScreen(),
       ),
     );
   }

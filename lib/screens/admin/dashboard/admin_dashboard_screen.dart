@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinjamdapur/screens/admin/widgets/admin_drawer.dart';
 import '../widgets/dashboard_card.dart';
 import '../widgets/recent_loan_card.dart';
 
@@ -23,47 +24,8 @@ class AdminDashboardScreen extends StatelessWidget {
         ],
       ),
 
-      /// DRAWER
-      drawer: Drawer(
-        child: Column(
-          children: [
-            /// DRAWER HEADER
-            DrawerHeader(
-              decoration: const BoxDecoration(
-                color: Color(0xFFB7D1A3),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset(
-                    'assets/images/logo.png',
-                    width: 60,
-                  ),
-                  const SizedBox(height: 10),
-                  const Text(
-                    'PINJAMDAPUR',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
-                  ),
-                  const Text(
-                    'Admin',
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ],
-              ),
-            ),
-
-            _drawerItem(Icons.dashboard, 'Dashboard'),
-            _drawerItem(Icons.inventory_2_outlined, 'Data Barang'),
-            _drawerItem(Icons.people_outline, 'Data User'),
-            _drawerItem(Icons.assignment_outlined, 'Peminjaman'),
-            _drawerItem(Icons.assignment_return_outlined, 'Pengembalian'),
-            _drawerItem(Icons.logout, 'Keluar'),
-          ],
-        ),
-      ),
+      /// DRAWER - Now using reusable AdminDrawer
+      drawer: const AdminDrawer(),
 
       /// BODY
       body: SingleChildScrollView(
@@ -129,15 +91,6 @@ class AdminDashboardScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  /// ITEM DRAWER
-  Widget _drawerItem(IconData icon, String title) {
-    return ListTile(
-      leading: Icon(icon),
-      title: Text(title),
-      onTap: () {},
     );
   }
 }

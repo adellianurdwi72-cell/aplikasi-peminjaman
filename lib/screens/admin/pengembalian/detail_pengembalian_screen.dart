@@ -3,8 +3,8 @@ import 'package:pinjamdapur/screens/admin/widgets/admin_drawer.dart';
 import 'package:pinjamdapur/screens/admin/widgets/info_card.dart';
 import 'package:pinjamdapur/screens/admin/widgets/section_card.dart';
 
-class PengembalianDetailScreen extends StatelessWidget {
-  const PengembalianDetailScreen({super.key});
+class DetailPengembalianScreen  extends StatelessWidget {
+  const DetailPengembalianScreen ({super.key});
 
   @override
   Widget build(BuildContext context) {
